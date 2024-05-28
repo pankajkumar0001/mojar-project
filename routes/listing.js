@@ -12,7 +12,7 @@ router.get("/",wrapAsync(listingControllers.index));
   
   // create route
     router.get("/new",isLoggedIn,listingControllers.newformRender)
-    router.post("/", isLoggedIn,upload.single("listing[image]"),wrapAsync(listingControllers.createListing))
+    router.post("/", isLoggedIn,wrapAsync(listingControllers.createListing))
 
 // show  route
 router.get("/:id",listingControllers.showListing);
